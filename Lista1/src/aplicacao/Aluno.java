@@ -10,7 +10,7 @@ public class Aluno {
 	private String situacao;
 	
 	public Aluno() {
-		
+		this.situacao = "Indefinida";
 	}
 	
 	public void setNome(String novoNome) {
