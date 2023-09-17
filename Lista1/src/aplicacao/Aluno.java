@@ -10,7 +10,7 @@ public class Aluno {
 	private String situacao;
 	
 	public Aluno() {
-		
+		this.situacao = "Indefinida";
 	}
 	
 	public void setNome(String novoNome) {
@@ -76,17 +76,13 @@ public class Aluno {
 			case 1:
 				this.nota1 = valorNota;
 				this.calcularMedia();
-				return "Nota Alterada";
 			case 2:
 				this.nota2 = valorNota;
 				this.calcularMedia();
-				return "Nota Alterada";
 			case 3: 
 				this.nota3 = valorNota;
 				this.calcularMedia();
-				return "Nota Alterada";
-			default: 
-				return "Nao foi possivel alterar a nota";
 		}
+				return this.situacao;
 	}
 }

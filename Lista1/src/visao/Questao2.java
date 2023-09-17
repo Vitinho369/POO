@@ -16,7 +16,7 @@ public class Questao2 {
 		float n1, n2, n3, nAlterada;
 		int op;
 		boolean cadastro = false;
-		
+		Aluno alunoAux;
 		do {
 			System.out.println("---------------------------------------------------------");
 			System.out.println("MENU PRINCIPAL");
@@ -128,31 +128,26 @@ public class Questao2 {
 					if(cadastro) {
 						System.out.println("Digite a matricula do aluno que deseja buscar:");
 						matricula = teclado.nextInt();
-						
+						alunoAux = null;
 						if(a1.buscarAluno(matricula)) {
-							System.out.println("Nome: " + a1.getNome());
-							System.out.println("Nota 1: " + a1.getNota1());
-							System.out.println("Nota 2: " + a1.getNota2());
-							System.out.println("Nota 3: " + a1.getNota3());
-							System.out.println("Media: " + a1.getMedia());
-							System.out.println("Situacao: " + a1.getSituacao());
+							alunoAux = a1;
 						}else if(a2.buscarAluno(matricula)) {
-							System.out.println("Nome: " + a2.getNome());
-							System.out.println("Nota 1: " + a2.getNota1());
-							System.out.println("Nota 2: " + a2.getNota2());
-							System.out.println("Nota 3: " + a2.getNota3());
-							System.out.println("Media: " + a2.getMedia());
-							System.out.println("Situacao: " + a2.getSituacao());
+							alunoAux = a2;
 						}else if(a3.buscarAluno(matricula)) {
-							System.out.println("Nome: " + a3.getNome());
-							System.out.println("Nota 1: " + a3.getNota1());
-							System.out.println("Nota 2: " + a3.getNota2());
-							System.out.println("Nota 3: " + a3.getNota3());
-							System.out.println("Media: " + a3.getMedia());
-							System.out.println("Situacao: " + a3.getSituacao());
+							alunoAux = a3;
 						}else {
 							System.out.println("Nao existe aluno cadastrado com essa matricula");
 						}
+
+						if(alunoAux != null){
+							System.out.println("Nome: " + alunoAux.getNome());
+							System.out.println("Nota 1: " + alunoAux.getNota1());
+							System.out.println("Nota 2: " + alunoAux.getNota2());
+							System.out.println("Nota 3: " + alunoAux.getNota3());
+							System.out.println("Media: " + alunoAux.getMedia());
+							System.out.println("Situacao: " + alunoAux.getSituacao());
+						}
+						
 					}else {
 						System.out.println("Nao eh possivel informar dados de um aluno, alunos nao cadastrados");
 					}
@@ -165,20 +160,27 @@ public class Questao2 {
 						matricula = teclado.nextInt();
 						
 						if(a1.buscarAluno(matricula)) {
-							System.out.println("Qual nota deseja alterar do aluno 1?");
-							codNota = teclado.nextInt();
+							
+							do{
+								System.out.println("Qual nota deseja alterar do aluno 1 (1,2,3)?");
+								codNota = teclado.nextInt();
+							}while((aux<1)||(aux>3));
 							System.out.println("Qual a nota?");
 							nAlterada = teclado.nextFloat();
 							System.out.println(a1.alterarNota(codNota, nAlterada));
 						}else if(a2.buscarAluno(matricula)) {
-							System.out.println("Qual a nota que deseja alterar do aluno 2?");
-							codNota = teclado.nextInt();
+							do{
+								System.out.println("Qual nota deseja alterar do aluno 2 (1,2,3)?");
+								codNota = teclado.nextInt();
+							}while((aux<1)||(aux>3));
 							System.out.println("Qual a nota?");
 							nAlterada = teclado.nextFloat();
 							System.out.println(a2.alterarNota(codNota, nAlterada));
 						}else if(a3.buscarAluno(matricula)) {
-							System.out.println("Qual a nota que deseja alterar do aluno 3?");
-							codNota = teclado.nextInt();
+							do{
+								System.out.println("Qual nota deseja alterar do aluno 3 (1,2,3)?");
+								codNota = teclado.nextInt();
+							}while((aux<1)||(aux>3));
 							System.out.println("Qual a nota?");
 							nAlterada = teclado.nextFloat();
 							System.out.println(a3.alterarNota(codNota, nAlterada));
