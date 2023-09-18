@@ -164,7 +164,7 @@ public class Questao2 {
 							do{
 								System.out.println("Qual nota deseja alterar do aluno 1 (1,2,3)?");
 								codNota = teclado.nextInt();
-							}while((aux<1)||(aux>3));
+							}while((codNota<1)||(codNota>3));
 							System.out.println("Qual a nota?");
 							nAlterada = teclado.nextFloat();
 							System.out.println(a1.alterarNota(codNota, nAlterada));
@@ -172,7 +172,7 @@ public class Questao2 {
 							do{
 								System.out.println("Qual nota deseja alterar do aluno 2 (1,2,3)?");
 								codNota = teclado.nextInt();
-							}while((aux<1)||(aux>3));
+							}while((codNota<1)||(codNota>3));
 							System.out.println("Qual a nota?");
 							nAlterada = teclado.nextFloat();
 							System.out.println(a2.alterarNota(codNota, nAlterada));
@@ -180,7 +180,7 @@ public class Questao2 {
 							do{
 								System.out.println("Qual nota deseja alterar do aluno 3 (1,2,3)?");
 								codNota = teclado.nextInt();
-							}while((aux<1)||(aux>3));
+							}while((codNota<1)||(codNota>3));
 							System.out.println("Qual a nota?");
 							nAlterada = teclado.nextFloat();
 							System.out.println(a3.alterarNota(codNota, nAlterada));

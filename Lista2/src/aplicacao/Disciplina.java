@@ -47,11 +47,11 @@ public class Disciplina {
 		this.alunos.add(aluno);
 	}
 	
-	public String consultarAluno(int matricula) {
-		String dados = "";
+	public Aluno consultarAluno(int matricula) {
+		Aluno dados = null;
 		for(int i=0; i < alunos.size();i++) {
 			if(this.alunos.get(i).getMatricula() == matricula) {
-				dados = alunos.get(i).estado();
+				dados = alunos.get(i);
 			}
 		}
 		return dados;
@@ -59,10 +59,15 @@ public class Disciplina {
 	
 	public String getDados() {
 		return "\nCodigo da disciplina: " + this.codDisciplina + "\nNome do professor: " + this.nomeProf+
-				"Titulo do professor: " + this.titulo;
+				"\nTitulo do professor: " + this.titulo;
 	}
 	
-	public void alterarProfessor(String nomeProf) {
+	public void alterarProfessor(String nomeProf, String titulo) {
 		this.nomeProf = nomeProf;
+		this.titulo = titulo;
+	}
+	
+	public int getcodDisciplina() {
+		return this.codDisciplina;
 	}
 }
