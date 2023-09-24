@@ -10,7 +10,7 @@ public class Questao_7 {
 		Pais pais, paisCompara;
 		String nomePais, nomeCapital;
 		float dimensao;
-		boolean encontraPais;
+		boolean encontraPais, fronteira;
 		Scanner ler = new Scanner(System.in);
 		int op, qtdFronteira, opPais;
 		
@@ -20,6 +20,7 @@ public class Questao_7 {
 			System.out.println("3 - Definir fronteira de um pais");
 			System.out.println("4 - Retornar fronteira");
 			System.out.println("5 - Vizinhos comuns de um pais");
+			System.out.println("6 - Sair");
 			
 			op = ler.nextInt();		
 			
@@ -60,7 +61,7 @@ public class Questao_7 {
 						System.out.println("Paises que fazem fronteira:");
 						
 						for(int j=0; j < paises.get(i).getFronteira().size();j++) {
-							System.out.println(paises.get(i).getFronteira().get(j).getNome());
+							System.out.println("\t"+paises.get(i).getFronteira().get(j).getNome());
 						}
 					}
 					System.out.println("--------------------------------\n");
@@ -79,6 +80,8 @@ public class Questao_7 {
 
 					System.out.println("\nQual o pais que deseja definir a fronteira?");
 					opPais = ler.nextInt();
+					
+					paisCompara = paises.get(opPais-1);
 					System.out.println("Quantos paises deseja definir como fronteira?");
 					qtdFronteira = ler.nextInt();
 					
@@ -87,14 +90,12 @@ public class Questao_7 {
 							System.out.println("Digite uma opcao do pais ");
 							opPais = ler.nextInt();
 							pais = paises.get(opPais-1);
-							
-							if(!paises.get(opPais-1).fazerFronteira(pais)) {
+							fronteira = paisCompara.fazerFronteira(pais);
+							if(!fronteira) {
 								System.out.println("Fronteira igual ao pais selecionado, digite novamente");
 							}
 							
-						}while(!paises.get(opPais-1).fazerFronteira(pais));
-						
-						paises.get(opPais-1).getFronteira().add(pais);
+						}while(!fronteira);
 					}
 					break;
 					
