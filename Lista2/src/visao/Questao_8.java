@@ -221,7 +221,6 @@ public class Questao_8 {
 							 contTempo++;
 							 if(contTempo > 60) {
 								 System.out.println();
-								 contTempo = 0;
 							 }
 						}
 						
