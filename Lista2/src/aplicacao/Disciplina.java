@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import aplicacao.Aluno;
 
 public class Disciplina {
-	private ArrayList<Aluno> alunos = new ArrayList<Aluno>();
+	private ArrayList<Aluno> alunos;
 	private int codDisciplina;
 	private String titulo;
 	private int cargaH;
@@ -11,6 +11,7 @@ public class Disciplina {
 	
 	public Disciplina(int codDisciplina) {
 		this.codDisciplina = codDisciplina;
+		this.alunos = new ArrayList<Aluno>();
 	}
 	
 	public String melhorAluno() {

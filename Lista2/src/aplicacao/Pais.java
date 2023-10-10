@@ -5,12 +5,13 @@ public class Pais {
 	private String nome;
 	private String capital;
 	private float dimensao;
-	private ArrayList<Pais> fronteira = new ArrayList<Pais>();
+	private ArrayList<Pais> fronteira;
 	
 	public Pais(String nome, String capital, float dimensao) {
 		this.nome = nome;
 		this.capital = capital;
 		this.dimensao = dimensao;
+		this.fronteira = new ArrayList<Pais>();
 	}
 	
 	public String getNome() {
