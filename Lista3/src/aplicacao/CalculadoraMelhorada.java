@@ -18,6 +18,7 @@ public class CalculadoraMelhorada extends Calculadora{
 		}else{
 			resultado = super.calcular();
 		}
+		
 		return resultado;
 	}
 }
