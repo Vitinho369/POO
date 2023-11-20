@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS Socio(
 );
 
 CREATE TABLE IF NOT EXISTS Dependente(
-	id int,
+	id serial,
 	nome text,
 	idade int
 );

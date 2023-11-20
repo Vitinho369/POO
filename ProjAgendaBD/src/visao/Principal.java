@@ -46,6 +46,8 @@ public class Principal {
 					}
 					
 				}while(opSec != 6);
+				
+				System.out.println("Voltando para o Menu Principal");
 				break;
 				
 			case 2: 
